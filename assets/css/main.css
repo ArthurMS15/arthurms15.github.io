@@ -1408,14 +1408,14 @@ input, select, textarea {
 		-ms-justify-content: center;
 		justify-content: center;
 		width: calc(100% + 2em);
-		margin: 0 0 3em -2em;
+		margin: 0 0 0 -2em;
 		padding: 0;
 		list-style: none;
 	}
 
 		.features li {
 			width: calc(25% - 2em);
-			margin-left: 2em;
+			margin-left: 1.4em;
 
 			padding: 0;
 		}
