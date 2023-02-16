@@ -1034,7 +1034,7 @@ input, select, textarea {
 		}
 
 	.icon.major {
-		border-color: rgba(255, 255, 255, 0.35);
+		border-color: rgb(255, 136, 0);
 	}
 
 		.icon.major:before {
@@ -1300,7 +1300,7 @@ input, select, textarea {
 	}
 
 	header.major h2:after {
-		background-color: rgba(255, 255, 255, 0.35);
+		background-color: rgb(255, 136, 0);
 	}
 
 /* Table */
@@ -1906,14 +1906,6 @@ input, select, textarea {
 			color: #636363;
 		}
 
-		#main header.major h2:after {
-			background-color: #dddddd;
-			background-image: -moz-linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
-			background-image: -webkit-linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
-			background-image: -ms-linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
-			background-image: linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
-		}
-
 		#main table tbody tr {
 			border-color: #dddddd;
 		}
@@ -1944,7 +1936,7 @@ input, select, textarea {
 
 		#main > .main {
 			padding: 5em 5em 3em 5em ;
-			border-top: solid 1px #dddddd;
+			border-top: solid 10px #1e2124;
 		}
 
 			#main > .main:first-child {
