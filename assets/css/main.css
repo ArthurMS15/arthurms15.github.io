@@ -158,6 +158,8 @@ input, select, textarea {
 			-webkit-column-gap: 2em;
 			-ms-column-gap: 2em;
 			column-gap: 2em;
+  			background: #413932;
+			border-bottom: solid 12px #1e2124;
 			text-align: justify;
 		}
 
