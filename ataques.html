@@ -49,9 +49,12 @@
 								</ul>
 								<p><strong>Malware:</strong></p>
 								<p class="content"> 
-									Se refere a <mark>todo o tipo de software malicioso</mark> (vírus, cavalos de Troia, worms e ransomware). Os atacantes usam para roubar informações confidenciais, criptografar arquivos importantes ou transformar sistemas em bots para distribuir spam ou lançar ataques DDoS.
-									Existem várias técnicas: phishing, engenharia social, exploração de vulnerabilidades em sistemas desatualizados e outros. Uma vez que o usuário clica em um link ou baixa um arquivo malicioso, o malware é instalado no dispositivo sem o conhecimento.
-									Pegando como referência o parágrafo anterior ele então acaba roubando informações pessoais, gravar a atividade do usuário, instalar outros malwares, criptografar dados e exigir um resgate, controlar o dispositivo infectado, entre outros.</p>
+									Se refere a <mark>todo o tipo de software malicioso</mark> (vírus, cavalos de Troia, worms e ransomware). A operação de um malware varia dependendo do tipo dele e objetivo do atacante. Quando o usuário executa o programa infectado, o malware pode se instalar no sistema.<br><br><br><br><br>
+									Existem várias técnicas: phishing, engenharia social e exploração de vulnerabilidades. Uma vez que o usuário clica em um link ou baixa um arquivo malicioso (<mark>infecção</mark>), o malware é instalado no dispositivo, o malware pode tentar se comunicar com um servidor remoto para enviar dados (<mark>comunicação</mark>) e se espalhar em outros dispositivos.<br><br>
+									Malwares roubam informações pessoais, gravam atividades, criptografam dados, controlam o dispositivo infectado, entre outros.
+									<mark>Cada malware tem suas próprias características e métodos de propagação</mark>.
+									O funcionamento deles variam de acordo com o seu tipo e objetivo, mas em geral, eles têm a capacidade de se instalar em um sistema e se esconder de detecções.	
+								</p>
 								<p><strong>Phishing:</strong></p>
 								<p class="content"> 
 									Envio de <mark>mensagens falsas por e-mail ou mensagem de texto fingindo ser uma fonte confiável</mark>. 
@@ -124,14 +127,13 @@
 								<p><strong>DNS Spoofing:</strong></p>
 									<p class="content"> 
 										<mark>O invasor manipula o sistema de nome de domínio (DNS) de uma rede, substituindo um endereço IP legítimo por um endereço falso</mark>.
-										Redirecionando o tráfego de rede, para então roubar informações confidenciais do usuário.
-
-										<br><br><br><br><br>
+										Redirecionando o tráfego de rede, para então roubar informações confidenciais do usuário. interceptando e manipulando o tráfego da rede.
+										<br><br><br><br><br><br>
 										Envolve a exploração de vulnerabilidades em sistemas de DNS mal configurados ou desatualizados, a interceptação do tráfego de rede em trânsito ou a instalação de malware em um dispositivo na rede.
-
-										<br><br><br><br><br>
-										O ataque começa com o invasor enviando uma solicitação DNS falsificada para um servidor DNS legítimo. Quando o usuário na rede faz uma solicitação para acessar um site, o servidor DNS malicioso responde com o endereço IP falso.
-										O ataque é eficaz quando o invasor tem acesso ao gateway da rede.</p>
+										Quando o usuário acessar o site, seu computador consulta o servidor DNS para obter o endereço IP ao nome de domínio. Se a resposta falsa estiver presente no cache DNS do sistema, o usuário será redirecionado para um endereço IP diferente.
+										<br><br>
+										O ataque começa com o invasor enviando uma solicitação DNS falsificada para um servidor DNS legítimo (feito por meio da manipulação dos registros DNS da vítima, armazenados em cache nos servidores DNS, roteadores ou dispositivos de rede intermediários). Quando o usuário na rede faz uma solicitação para acessar um site, o servidor DNS malicioso responde com o endereço IP falso.
+										</p>
 								<p><strong>Botnets:</strong></p>
 									<p class="content"> 
 										<mark>São redes de dispositivos infectados com malware, sendo controlados remotamente pelo atacante. O objetivo é usar essas redes para realizar uma série de atividades maliciosas</mark> (spam, negação de serviço e roubo de informações pessoais).
@@ -178,6 +180,7 @@
 									<mark>Verificação de segurança do site</mark> (certificados SSL e dados criptografados);
 									<br>
 									Se uma senha for comprometida, <mark>altere-a imediatamente</mark> ou <mark>bloqueie a conta</mark>;<br>
+									Tentar <mark>notificar </mark> pessoas importantes de que foi atacado;<br>
 									<mark>Denunciar</mark> para autoridades.
 								</p>
 								<p><strong>Denial of Service (negação de serviço):</strong></p>
