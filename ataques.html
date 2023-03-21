@@ -34,6 +34,7 @@
 
 						<!-- Content -->
 							<section id="content" class="main">
+								<h1>Entendendo recursos e ativos afetados</h1>
 								<h2>Ataques Cibernéticos - Visão geral:</h2>
 								<p><mark>Ações maliciosas intencionais</mark> (feitas por um indivíduo ou grupo) que <mark>comprometem a segurança de um ativo</mark> com o uso de uma variedade de técnicas e ferramentas. </p>
 								<p>O objetivo do ataque varia, mas o principal objetivo é ter acesso não autorizado a informações confidenciais causando danos financeiros, perda de dados, violação de privacidade e danos à reputação. </p><br>
@@ -419,6 +420,7 @@
 								O ataque de força bruta pode ser realizado em qualquer sistema que utilize senhas ou chaves criptográficas, como logins de contas bancárias, contas de e-mail, redes sociais, entre outros. É importante ressaltar que senhas fracas e previsíveis, como datas de aniversário e sequências numéricas, são mais vulneráveis a ataques de força bruta.
 								</p><br><br>
 
+								<h1>Playbooks de Segurança: Entendendo os tipos de ataques</h1>
 								<ul class="statistics">
 									<li class="style1">
 										<strong>Como identificar?</strong>
@@ -645,7 +647,179 @@
 								<h2><strong>Engenharia social:</strong></h2>
 								<mark>Como identificar?</mark>
 								<p>
+								Solicitações estranhas de informações confidenciais: isso pode incluir senhas, números de cartão de crédito, informações de conta bancária ou outras informações pessoais.<br>
+								Ofertas de recompensas ou presentes: os criminosos podem oferecer brindes ou outras recompensas para incentivar as pessoas a fornecer informações ou executar ações maliciosas.<br>
+								
+								Mensagens de urgência: os atacantes podem tentar pressionar as vítimas a agir rapidamente, fazendo com que elas tomem decisões impulsivas sem pensar.<br>
+								
+								Solicitações de download ou instalação de software: criminosos podem enviar links ou anexos maliciosos que, quando clicados ou baixados, instalam malware no computador da vítima.
+								</p>
+								<mark>Contramedidas preventivas</mark>
+								<p>
 
+								Políticas e procedimentos: estabelecer políticas e procedimentos claros para o compartilhamento de informações confidenciais e a instalação de software pode ajudar a prevenir ataques de engenharia social.<br>
+								
+								Controles de acesso: limitar o acesso a informações confidenciais apenas a pessoas autorizadas pode ajudar a reduzir a exposição a ataques de engenharia social.<br>
+								
+								Verificação de fontes: antes de fornecer informações confidenciais ou executar ações solicitadas, é importante verificar a identidade da pessoa ou organização que faz a solicitação.<br>
+								
+								Implementação de filtros de e-mail: filtros de e-mail podem ajudar a bloquear e-mails maliciosos de phishing ou spam que tentam enganar os usuários.<br>
+								
+								Proteção de endpoint: soluções de segurança de endpoint, como antivírus e anti-malware, podem ajudar a detectar e prevenir malware que possa ser instalado por meio de ataques de engenharia social.
+								</p>
+								<mark>Contramedidas reativas (procedimentos, ordem dos mesmos e tempo em que devem ser executados)</mark>
+								<p>
+								Novamente comece com o isolamento do sistema comprometido, colete evidências para identificar o tipo de ataque e as informações relevantes que foram comprometidas. <br>
+								
+								Investigação interna: a equipe de segurança deve conduzir uma investigação interna para identificar as fontes do ataque e determinar as vulnerabilidades que foram exploradas pelo atacante. Isso pode incluir a revisão dos registros de segurança e entrevistas com os funcionários que podem ter sido envolvidos. <br>
+								
+								Notificação da equipe de gerenciamento: a equipe de gerenciamento deve ser notificada imediatamente para que possa tomar medidas necessárias para minimizar os danos e proteger a empresa. Isso pode incluir a revisão de políticas de segurança, a comunicação com os acionistas e a notificação das autoridades relevantes. <br>
+								
+								Nisso a equipe de TI deve trabalhar para restaurar os dados e sistemas comprometidos o mais rápido possível. Isso pode incluir a restauração de backups de dados, a reinstalação de sistemas operacionais e a aplicação de patches de segurança para corrigir as vulnerabilidades exploradas pelo ataque.
+								</p><br>
+
+								<h2><strong>Cryptojacking:</strong></h2>
+								<mark>Como identificar?</mark>
+								<p>
+								O desempenho do computador pode diminuir significativamente, tornando as atividades do usuário mais lentas. Isso ocorre porque o malware consome a energia do processador. <br>
+								O uso da CPU pode ser monitorado usando o Gerenciador de Tarefas no Windows ou o Monitor de Atividades no Mac. Se houver um aumento repentino no uso da CPU, é possível que o computador esteja sendo usado para minerar criptomoedas. <br>
+								Se o usuário notar um aumento significativo na conta de energia elétrica, pode ser um sinal de que o computador está sendo usado para minerar criptomoedas.
+								</p>
+								<mark>Contramedidas preventivas</mark>
+								<p>
+								É importante manter o sistema operacional, navegadores da web e outros programas atualizados com as últimas correções de segurança. Isso ajuda a reduzir a probabilidade de um ataque bem-sucedido. <br>
+								Um software antivírus atualizado pode ajudar a detectar e impedir o malware. Existem também algumas extensões de navegador, como o NoCoin, podem ser usadas para bloquear scripts de mineração de criptomoedas em sites.<br>
+								
+								Evite clicar em links suspeitos em e-mails, mensagens de texto e nas redes sociais. Esses links podem levar a sites infectados com malware. <br>
+								
+								Um firewall bem configurado pode ajudar a bloquear o tráfego de entrada e saída de computadores comprometidos.
+								</p>
+								<mark>Contramedidas reativas (procedimentos, ordem dos mesmos e tempo em que devem ser executados)</mark>
+								<p>
+								Identifique o ataque e isole o sistema.<br>
+								
+								O malware deve ser removido do dispositivo infectado o mais rápido possível. Isso pode ser feito através do uso de ferramentas de antivírus ou de software de segurança específico para Cryptojacking. <br>
+								
+								É importante manter o software e sistemas atualizados para evitar vulnerabilidades que possam ser exploradas pelo malware. Além disso, a instalação de patches de segurança e atualizações de software pode ajudar a prevenir futuros ataques de Cryptojacking. <br>
+								
+								A entidade deve revisar suas políticas de segurança e seus procedimentos de segurança para garantir que eles estejam atualizados e eficazes. Isso pode incluir a implementação de políticas de acesso à rede mais rigorosas, a revisão dos processos de gerenciamento de patches e a implementação de controles de segurança adicionais.
+								</p><br>
+								
+								<h2><strong>DNS Spoofing:</strong></h2>
+								<mark>Como identificar?</mark>
+								<p>
+								O endereço IP do site visitado é diferente do esperado;<br>
+								A página que está sendo exibida é diferente do que se esperava ou contém informações suspeitas;<br>
+								O navegador exibe um aviso de certificado inválido ou não confiável.
+								</p>
+								<mark>Contramedidas preventivas</mark>
+								<p>
+								Configurar o DNS para usar servidores DNS seguros e confiáveis;<br>
+								Atualizar regularmente o software do servidor DNS e o software do roteador de rede;<br>
+								Usar conexões HTTPS sempre que possível para criptografar o tráfego da rede;<br>
+								Utilizar um firewall de rede para bloquear tráfego malicioso e monitorar as atividades suspeitas.
+								</p>
+								<mark>Contramedidas reativas (procedimentos, ordem dos mesmos e tempo em que devem ser executados)</mark>
+								<p>
+								A primeira medida a ser tomada é identificar a origem do ataque (rastreando a origem dos pacotes de dados que estão chegando e verificar se eles correspondem ao endereço IP correto do servidor DNS).<br>
+
+									Em seguida, deve-se bloquear o tráfego malicioso, utilizando firewalls e outros dispositivos de segurança.<br>
+									
+									O próximo passo é atualizar as informações de DNS em todos os sistemas afetados para garantir que eles estejam usando o endereço IP correto do servidor DNS. Isso pode ser feito manualmente ou com o uso de ferramentas automatizadas de gerenciamento de configuração. <br>
+									
+									É importante notificar os usuários e clientes afetados sobre o ataque e as medidas tomadas para remediar a situação. Também é recomendável realizar uma investigação mais aprofundada do ataque para determinar as causas raiz e tomar medidas preventivas para evitar futuros ataques. <br>
+									
+									Outra medida importante é manter o servidor DNS atualizado e protegido contra vulnerabilidades conhecidas. Isso inclui a aplicação de patches de segurança, a utilização de senhas fortes e a implementação de medidas de autenticação e controle de acesso.<br>
+									
+									Por fim, é importante fazer backup regularmente dos dados do servidor DNS e manter esses backups em um local seguro e protegido contra acesso não autorizado.
+								</p><br>
+								
+								<h2><strong>Botnets:</strong></h2>
+								<mark>Como identificar?</mark>
+								<p>
+								O dispositivo pode estar executando tarefas lentamente, pois está sendo usado para realizar tarefas em segundo plano sem o conhecimento do usuário. <br>
+								O uso de largura de banda da rede pode estar aumentando devido a tráfego malicioso enviado pelos dispositivos infectados. <br>
+								O dispositivo pode estar apresentando comportamento estranho, como abrir janelas do navegador sem ser solicitado ou enviar e-mails desconhecidos.
+								</p>
+								<mark>Contramedidas preventivas</mark>
+								<p>
+								Mantenha o software do dispositivo atualizado: botnets muitas vezes exploram vulnerabilidades em software desatualizado. <br>
+								Utilize programas de antivírus e antimalware para detectar e remover possíveis infecções. <br>
+								Utilize senhas complexas para acessar seus dispositivos e contas, evitando senhas fáceis e previsíveis que podem ser facilmente quebradas por atacantes. <br>
+								Fique atento a e-mails suspeitos ou de remetentes desconhecidos, e tome cuidado ao clicar em links ou baixar anexos.
+								</p>
+								<mark>Contramedidas reativas (procedimentos, ordem dos mesmos e tempo em que devem ser executados)</mark>
+								<p>
+								Identifique o ataque e isole o da rede.<br>
+
+								Bloqueie a comunicação com servidores de comando e controle (C&C): As botnets se comunicam com servidores de comando e controle para receber instruções. O bloqueio dessas comunicações pode ajudar a impedir que a botnet receba novas instruções e interromper sua operação. <br>
+
+								Os dispositivos infectados devem ser verificados e limpos do malware de botnet. Isso pode exigir a reinstalação do sistema operacional ou a execução de um software antivírus especializado.<br>
+
+								Para evitar futuros ataques de botnets, é importante manter o software e os sistemas de segurança atualizados e configurados corretamente.<br>
+								Depois que o ataque foi resolvido, é importante realizar uma investigação para determinar a origem do ataque e quaisquer vulnerabilidades que possam ter sido exploradas.
+								</p><br>
+								
+								<h2><strong>Keylogger:</strong></h2>
+								<mark>Como identificar?</mark>
+								<p>
+								É preciso estar atento a sinais como a lentidão do sistema, comportamentos incomuns do mouse e teclado, janelas pop-up inesperadas e outros comportamentos atípicos. Além disso, é possível utilizar softwares antivírus e de detecção de malware para identificar e remover o Keylogger.
+								</p>
+								<mark>Contramedidas preventivas</mark>
+								<p>
+								Manter o sistema operacional e softwares (antivírus) atualizados;<br>
+								
+								Não baixar softwares ou arquivos suspeitos de fontes desconhecidas ou não confiáveis;<br>
+								
+								Utilizar senhas fortes e exclusivas para cada conta, e não compartilhá-las;<br>
+								
+								Utilizar teclados virtuais para digitar senhas em sites confidenciais, como bancos online;<br>
+								
+								Ficar atento a e-mails de phishing que podem conter links ou arquivos maliciosos que instalam o Keylogger;<br>
+								
+								Utilizar firewalls para bloquear tráfego de entrada e saída suspeito;<br>
+								
+								Usar uma VPN para se conectar à internet, especialmente em redes Wi-Fi públicas e não confiáveis.
+								</p>
+								<mark>Contramedidas reativas (procedimentos, ordem dos mesmos e tempo em que devem ser executados)</mark>
+								<p>
+								Identifique o ataque e isole o sistema para então pode remover o malware do sistema infectado o mais rápido possível.<br>
+								
+								Como o Keylogger pode capturar senhas, é importante mudar todas as senhas relacionadas ao sistema infectado e a outros sistemas que possam ter sido acessados por meio dele.<br>
+								
+								Após a remoção do malware, é importante monitorar o sistema e a rede para garantir que o Keylogger não tenha deixado nenhum backdoor ou outro malware no sistema. <br>
+								
+								Eduque os usuários sobre os riscos do malware e a importância de medidas de segurança.
+								</p><br>
+								<h2><strong>Cavalo de Troia:</strong></h2>
+								<mark>Como identificar?</mark>
+								<p>
+								Se o computador está funcionando mais devagar do que o normal, pode ser um sinal de que há um Cavalo de Troia instalado no sistema. Já que o malware pode consumir recursos do sistema e afetar o desempenho geral do computador. <br>
+								Pop-ups e janelas inesperadas estiverem aparecendo no computador, pode ser um sinal de que há um Cavalo de Troia tentando se comunicar com um servidor remoto. <br>
+								Se houver u aumento significativo no tráfego de rede, isso pode indicar que um Cavalo de Troia está enviando informações do sistema afetado para um servidor remoto controlado pelo invasor.
+								</p>
+								<mark>Contramedidas preventivas</mark>
+								<p>
+								Software, programas e antivírus atualizados, prevenindo possíveis ataques.<br>
+
+								Evite clicar em links e anexos suspeitos em e-mails e mensagens de texto, pois eles podem ser usados para distribuir malware. <br>
+
+								Verifique o certificado digital do software antes de instalá-lo para garantir que seja legítimo e não tenha sido adulterado.<br>
+
+								Faça backup regularmente.
+								</p>
+								<mark>Contramedidas reativas (procedimentos, ordem dos mesmos e tempo em que devem ser executados)</mark>
+								<p>
+								Isole, identifique e remova o malware. <br>
+								
+								Recupere os dados após a remoção do malware: é possível que alguns dados tenham sido comprometidos ou excluídos pelo cavalo de troia. Nesse caso, é importante recuperar os dados de um backup recente ou, utilizar serviços de recuperação de dados.<br>
+								
+								Após a remoção do cavalo de troia, é importante realizar uma análise completa da segurança do dispositivo para identificar possíveis vulnerabilidades que possam ter sido exploradas pelo malware.
+								</p><br>
+								<h2><strong>Ransomware:</strong></h2>
+								<mark>Como identificar?</mark>
+								<p>
+									
 								</p>
 								<mark>Contramedidas preventivas</mark>
 								<p>
@@ -655,42 +829,45 @@
 								<p>
 
 								</p><br>
+								<h2><strong>Zero day exploit:</strong></h2>
+								<mark>Como identificar?</mark>
+								<p>
+									
+								</p>
+								<mark>Contramedidas preventivas</mark>
+								<p>
 
-								
-								<p><strong>Cryptojacking:</strong></p>
-								<p class="content">
-									<mark>Se o uso da CPU ou GPU</mark> for constantemente alto, suspeite;<br>
-									<mark>Aumento no uso de dados móveis ou de internet</mark>.<br>
-									Use <mark>extensões de bloqueio de criptomoedas</mark> em navegadores da web;
-									<mark>Evite clicar em links suspeitos</mark>.
-									<br><br>
-									Verificar a CPU e GPU regularmente, se houver tente remover o vírus, ou no pior, formate o sistema.
 								</p>
-								<p><strong>DNS Spoofing:</strong></p>
-								<p class="content">
-									<mark>Alterações inesperadas nos registros DNS</mark> de um sistema;<br>
-									Erros de <mark>redirecionamento</mark>;<br>
-									Certificados <mark>SSL inválidos ou alterados</mark>.<br>
-									Use <mark>servidores DNS confiáveis</mark>;<br>
-									Evite usar redes Wi-Fi não confiáveis;<br>
-									DNS deve usar <mark>protocolos seguros</mark>;<br>
-									<mark>Monitore registros DNS</mark> do sistema.
-									<mark>Limpe o cache DNS do sistema</mark>;<br>
-									<mark>Restaure o arquivo hosts padrão</mark>.
+								<mark>Contramedidas reativas (procedimentos, ordem dos mesmos e tempo em que devem ser executados)</mark>
+								<p>
+
+								</p><br>
+								<h2><strong>Man-in-the-Middle:</strong></h2>
+								<mark>Como identificar?</mark>
+								<p>
+									
 								</p>
-								<p><strong>Botnets:</strong></p>
-								<p class="content">
-									Aumento no uso de recursos da CPU e da memória;<br>
-									Dispositivo executando ações não iniciadas pelo usuário.
-									<br><br><br>
-									Utilize softwares antivírus em todos os dispositivos;<br>
-									Use senhas fortes e diferentes para cada conta online;<br>
-									Evitar abrir anexos ou clicar em links suspeitos.
-									<br>
-									<mark>Desconecte imediatamente o dispositivo da Internet</mark>;<br>
-									<mark>Restaure o dispositivo</mark> para as configurações de fábrica;<br>
-									<mark>Monitore a atividade</mark> das contas.
+								<mark>Contramedidas preventivas</mark>
+								<p>
+
 								</p>
+								<mark>Contramedidas reativas (procedimentos, ordem dos mesmos e tempo em que devem ser executados)</mark>
+								<p>
+
+								</p><br>
+								<h2><strong>Força bruta:</strong></h2>
+								<mark>Como identificar?</mark>
+								<p>
+									
+								</p>
+								<mark>Contramedidas preventivas</mark>
+								<p>
+
+								</p>
+								<mark>Contramedidas reativas (procedimentos, ordem dos mesmos e tempo em que devem ser executados)</mark>
+								<p>
+
+								</p><br>
 							</section>			
 					</div>
 
