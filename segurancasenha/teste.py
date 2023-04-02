@@ -11,7 +11,6 @@ from cryptography.hazmat.primitives.kdf.concatkdf import ConcatKDFHMAC
 from cryptography.hazmat.backends import default_backend
 
 def verificar_senha(senha):
-    #se tiver mais de 8 digitos
     if len(senha) < 8:
         return False
     if not re.search("[A-Z]", senha):
@@ -21,3 +20,20 @@ def verificar_senha(senha):
     if not re.search("[!@#$%^&*(),.?\":{}|<>]", senha):
         return False
     return True
+
+def gerar_chave(password, salt):
+    backend = default_backend()
+    kdf = PBKDF2HMAC(
+        algorithm=hashes.SHA256(),
+        length=32,
+        salt=salt,
+        iterations=100000,
+        backend=backend
+    )
+    key = ConcatKDFHMAC(
+        algorithm=hashes.SHA256(),
+        length=32,
+        otherinfo=None,
+        backend=backend
+    ).derive(kdf.derive(password.encode()))
+    return Fernet(base64.urlsafe_b64encode(key))
