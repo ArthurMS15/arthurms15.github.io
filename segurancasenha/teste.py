@@ -14,10 +14,10 @@ def verificar_senha(senha):
     #se tiver mais de 8 digitos
     if len(senha) < 8:
         return False
-    #verificar maiusculo
+    if not re.search("[A-Z]", senha):
         return False
-    #verificar número
+    if not re.search("[0-9]", senha):
         return False
-    #verificar se possui caracteres especiais
+    if not re.search("[!@#$%^&*(),.?\":{}|<>]", senha):
         return False
     return True
