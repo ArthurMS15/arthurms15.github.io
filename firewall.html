@@ -37,52 +37,23 @@
 
 			<!-- Content -->
 			<section id="content" class="main">
-				<h1>Entendendo recursos e ativos afetados</h1>
-				<h2>Ataques Cibernéticos - Visão geral:</h2>
-				<p><mark>Ações maliciosas intencionais</mark> (feitas por um indivíduo ou grupo) que <mark>comprometem a
-						segurança de um ativo</mark> com o uso de uma variedade de técnicas e ferramentas. </p>
-				<p>O objetivo do ataque varia, mas o principal objetivo é ter acesso não autorizado a informações
-					confidenciais causando danos financeiros, perda de dados, violação de privacidade e danos à
-					reputação. </p><br>
-				<h2>Ativos que ele pode afetar em um contexto geral:</h2>
-				<p>Os ativos afetados vão de <mark>dispositivos individuais</mark> (computadores pessoais e
-					smartphones), até <mark>redes inteiras</mark>, <mark>sistemas de controle industrial</mark>,
-					<mark>infraestruturas críticas</mark> e <mark>sistemas governamentais</mark>. Nisso pode ser
-					envolvido:</p>
-				<p>Hardware: computadores, laptops, smartphones, tablets, servidores, dispositivos de armazenamento,
-					roteadores e switches;</p>
-				<p>Software: sistemas operacionais, aplicativos, softwares de segurança, produtividade e de
-					gerenciamento de dados;</p>
-				<p>Redes e Serviços de Internet: incluindo redes locais (LANs), redes de longa distância (WANs), redes
-					sem fio (Wi-Fi), móveis e até mesmo as sociais, além de serviços de hospedagem na web, de e-mail e
-					de comércio;</p>
-				<p>Dados e informações: tendendo a ser informações confidenciais, financeiras, de identidade pessoal e
-					outros;</p>
-				<p>Dispositivos de IoT: câmeras de segurança e diversos outros dispositivos conectados à internet.</p>
-				<p>Ativos do meio físico além do hardware: instalações de infraestrutura crítica (usinas de energia, de
-					tratamento de água e outras instalações essenciais).</p><br>
-				<h2>Recursos de segurança e as maneiras que ataques cibernéticos podem afetar:</h2>
-				<p>Sabendo que qualquer setor que tenha qualquer conexão a rede implementada em sua organização pode
-					estar sujeito a ataques, qualquer requisito de segurança pode ser afetado também, mas poderia ser
-					comumente mais atrelado a <mark>confidencialidade</mark>, <mark>integridade</mark> e
-					<mark>privacidade</mark>, já que esses estão mais atrelados a <mark>manipulação dos dados</mark>.
-				</p>
+				<h1>Entendendo a configuração da rede</h1>
+				<h2>Por meio de um software: "Ferramenta de visualização de firewall de rede"</h2>
+				<div class="imagem-centralizada">
+					<img src="images/configfirewallinicial.png" alt="Descrição da imagem">
+				</div>
+				<br>
+				<p>A primeira etapa é determinar como será a configuração da sua rede, é possível escolher com <mark>nenhum firewall, firewall de perímetro ou sub-redes separadas</mark>.</p><br>
 				<p>
-					Existem alguns exemplos de fato de como na prática o recurso de uma entidade é afetado, podendo ser
-					dado das seguintes formas:<br>
-					Dados confidenciais: os ataques cibernéticos podem comprometer a privacidade dos dados e informações
-					confidenciais (dados financeiros, identidade pessoal e segredos comerciais);<br>
-					Sistemas de informação: eles podem afetar o funcionamento dos sistemas de informação, incluindo
-					redes, servidores e dispositivos de armazenamento;<br>
-					Serviços críticos: eles interrompem serviços críticos, como serviços de saúde, sistemas financeiros
-					e redes de energia;<br>
-					Integridade de dados: os ataques cibernéticos podem alterar, corromper ou excluir dados, afetando
-					nos arquivos não estarem mais completos;<br>
-					Reputação: eles danificam a reputação de uma organização ou indivíduo, porque tendem a haver sempre
-					notícias relatando isso ao público;<br>
-					Disponibilidade de serviços: eles tendem a tornar os serviços indisponíveis, já que afeta
-					negativamente o funcionamento de uma organização, eles tendem a medir esforços para parar um ataque
-					que está sendo realizado.<br>
+					Antes de dar continuidade na conceitualização da diferenciação do que é cada uma dessa redes, é interessante entender com uma conceitualização básica, o que é exatamente um <mark>firewall</mark>:<br>
+					Ele é um <mark>dispositivo/software de segurança que monitora e controla o tráfego de rede</mark>, agindo como uma barreira entre redes confiáveis (internas) e não confiáveis (como a Internet). O principal <mark>objetivo dele é proteger os sistemas e os dados dentro da rede interna de ameaças externas</mark> e garantir que apenas tráfego autorizado e seguro possa passar entre as redes.<br>
+					O firewall <mark>funciona com base em regras e políticas predefinidas que determinam quais tipos de tráfego de rede são permitidos ou bloqueados</mark>. E as regras são configuradas com base em critérios como: endereços IP, portas, protocolos ou aplicativos específicos.
+				</p><br>
+				<p>Voltando para a configuração da rede no programa a diferenciação entre cada uma das configurações é listada à seguir:</p>
+				<p><mark>Nenhum firewall</mark>: Não existe <mark>nenhuma barreira de proteção entre a rede interna e a Internet</mark>, com a rede exposta a riscos significativos. Isso torna a rede altamente vulnerável a ataques e ameaças cibernéticas (segurança de dados e sistema não é garantida), permitindo que agentes maliciosos acessem facilmente diferentes ativos.</p>
+				<p><mark>Firewall de perímetro</mark>: É colocado na borda da rede, <mark>protegendo todos os dispositivos e sistemas dentro da rede interna de ameaças externas</mark>. Ele age como uma barreira entre a Internet e a rede interna, analisando e filtrando todo o tráfego de entrada e saída com base em regras predefinidas. Essa abordagem <mark>oferece uma camada de proteção básica, mas não fornece proteção detalhada</mark> ou segmentação de rede.</p>
+				<p>
+					<mark>Sub-redes separadas</mark>: A rede interna é dividida em várias sub-redes isoladas, cada uma com seu próprio firewall. Isso permite uma segmentação mais granular da rede e oferece maior controle e segurança. <mark>Além de proteger a rede interna de ameaças externas, os firewalls também podem ser configurados para proteger sub-redes específicas de ameaças internas</mark>, como um dispositivo comprometido em outra sub-rede.
 				</p>
 				<br>
 				<ul class="statistics">
@@ -137,124 +108,6 @@
 				de se instalar em um sistema com anexos de e-mails, sites falsos, programas não licenciados e outros, a
 				partir do momento que ele se intalou, ele tenta se esconder de detecções.</p>
 				<br>
-				<h2><strong>Phishing:</strong></h2>
-				<mark> Quais recursos/ativos ele pode, potencialmente, afetar especificamente?</mark>
-				<p>
-					Os atacantes de phishing procuram obter informações pessoais e financeiras das vítimas: números de cartão de crédito, senhas, informações de login e outras informações
-					confidenciais.<br>
-
-					Eles também visam acessar as contas de e-mail e redes sociais das vítimas,
-					permitindo se passar pela vítima e acessar outras informações.<br>
-
-					Podem ser usados ​​para infectar dispositivos pessoais, como
-					smartphones, laptops e desktops. Além disso, um ataque de phishing pode ser usado para obter acesso
-					a uma rede doméstica ou corporativa, permitindo que os invasores explorem outras
-					vulnerabilidades.<br>
-
-					Caso uma empresa sofra um ataque de phishing que leve a divulgação de
-					informações confidenciais dos clientes ou cause danos financeiros, sua reputação pode ser seriamente
-					prejudicada.
-				</p>
-				<mark>O que faz?</mark>
-				<p>
-					Se dando por meio de uma técnica de engenharia social, com manipulações psicológicas através do
-					envio de <mark>mensagens falsas por e-mail, mensagem de texto ou página web fingindo ser uma fonte
-						confiável</mark>, de qualquer entidade que seja.
-					O objetivo é enganar e induzir a pessoa a clicar em um link, fazer download ou revelar informações
-					pessoais e confidenciais (roubo de identidade, fraude financeira ou invasão de sistemas). Seu
-					objetivo é obter e roubar informações pessoais, financeiras ou confidenciais das vítimas.
-				</p>
-				<mark>Operacionalização</mark>
-				<p>
-					Primeiro existe a preparação e criação da mensagem: o atacante seleciona um alvo (pessoa ou
-					organização) e coleta informações relevantes (endereço de e-mail, nome, cargo, interesses e
-					comportamentos online). Com base nessas informações, o atacante cria a mensagem enganosa. <br>
-					Em seguida, o atacante entra em contato com a vítima, enviando um e-mail ou criando uma página web
-					falsos que imitam a identidade visual e o conteúdo de uma entidade legítima. A mensagem falsa pode
-					conter um link, arquivo anexado ou página de login que solicita informações pessoais ou financeiras.
-					Com a pessoa tendo a mínima chance de se enganar ela pode fazer com que assim, acabe divulgando
-					informações confidenciais.
-				</p>
-				<mark>Como funciona?</mark>
-				<p>
-					Ele funciona través de duas fases: <mark>"contato" e "captura"</mark>, que envolvem principalmente a
-					engenharia social, ao invés de conhecimentos técnicos avançados. Na fase de "contato", o atacante
-					engana a vítima por meio da mensagem falsa (mencionada anteriormente no texto) e que como já se sabe
-					finge ser uma entidade confiável. Já na fase de "captura", a vítima é enganada e acaba divulgando
-					informações pessoais ou financeiras. É importante ressaltar que o sucesso do ataque depende da
-					habilidade do atacante em criar uma mensagem convincente e da vulnerabilidade da vítima em acreditar
-					na mensagem. Ou seja, além dessas duas fases citadas, é necessário ressaltar o
-					<mark>"engajamento"</mark> também, que é justamente a parte onde a pessoa é persuadida a realizar a
-					ação pretendida pelo atacante, através do uso de técnicas como urgência, medo ou incentivos. Essa
-					parte do engajamento que faz ocorrer posteriormente a "captura" das informações fornecidas pela
-					vítima, que podem ser usadas pelo atacante para acessar suas contas, realizar fraudes, comprometer
-					sistemas ou espalhar o ataque.</p>
-				<br>
-				<h2><strong>Denial of Service (negação de serviço):</strong></h2>
-				<mark> Quais recursos/ativos ele pode, potencialmente, afetar especificamente?</mark>
-				<p>
-					Afeta principalmente recursos e ativos relacionados à disponibilidade de serviços online: servidores, redes, roteadores, firewalls, aplicativos, bancos de dados,
-					sistemas de backup e qualquer outro componente que seja essencial para manter o serviço online.<br> 
-					O ataque pode causar lentidão no serviço ou até mesmo derrubá-lo completamente.
-				</p>
-				<mark>O que faz?</mark>
-				<p>
-					Ele tende a <mark>sobrecarregar um sistema com tráfego de rede excessivo (falso) ou solicitações de
-						serviço</mark>, a fim de torná-lo <mark>indisponível</mark>. Isso é feito através do envio de
-					uma grande quantidade de pacotes de dados para o alvo, que acaba por ficar sobrecarregado e
-					inacessível para usuários legítimos, impedindo o acesso ao serviço. Enviando uma grande quantidade
-					de pacotes de dados para o alvo, sobrecarregando recursos e tornando-o indisponível para usuários
-					legítimos,
-					impedindo o acesso ao serviço.
-				</p>
-				<mark>Operacionalização</mark>
-				<p>
-					Ela se dá através de uma rede de computadores infectados com malware (botnet), que é controlada pelo
-					atacante e utilizada para enviar o tráfego malicioso para o alvo. Ou por meio da amplificação de
-					tráfego: o atacante envia pacotes para servidores de terceiros que respondem com uma quantidade
-					ainda maior de tráfego para o alvo.
-				</p>
-				<mark>Como funciona?</mark>
-				<p>
-					Com requisições falsas ou usando técnicas de sobrecarga de conexões. <mark>O alvo tenta processar
-						todos os pedidos recebidos</mark>, mas acaba ficando sobrecarregado e não consegue atender novas
-					solicitações de usuários legítimos. Causando prejuízos financeiros, perda de dados ou danos à
-					reputação da organização afetada.</p><br>
-				<h2><strong>SQL Injection:</strong></h2>
-				<mark> Quais recursos/ativos ele pode, potencialmente, afetar especificamente?</mark>
-				<p>
-					Bancos de dados usados por empresas, organizações governamentais e outros tipos de sistemas que
-					armazenam informações confidenciais.<br>
-					Afeta informações armazenadas no banco de dados, permitindo que o atacante visualize, modifique ou
-					exclua dados importantes.
-				</p>
-				<mark>O que faz?</mark>
-				<p>
-					É uma técnica utilizada por cibercriminosos para explorar vulnerabilidades em aplicações web que se
-					comunicam com bancos de dados. Esse tipo de ataque tem como objetivo manipular o banco de dados
-					subjacente à aplicação, permitindo que o invasor acesse, altere ou exclua dados confidenciais, como
-					senhas, informações de cartão de crédito e outras informações pessoais sensíveis.
-				</p>
-				<mark>Operacionalização</mark>
-				<p>
-					Pelo mesmo ser usado para explorar vulnerabilidades em sistemas que utilizam bancos de dados e que
-					não aplicam corretamente as práticas de segurança para prevenir a injeção de código malicioso. Sua
-					operacionalização se dá pela identificação de uma vulnerabilidade na aplicação web que interage com
-					o banco de dados. Essa vulnerabilidade permite que o invasor insira comandos SQL maliciosos no
-					sistema, o que possibilita o acesso, modificação ou exclusão de informações confidenciais, como
-					senhas, dados de cartão de crédito e outras informações pessoais.
-					O objetivo da injeção SQL é manipular o banco de dados subjacente ao aplicativo. É possível inserir
-					um script de sua preferência, que pode variar de uma simples consulta até um drop de todo o
-					database. Normalmente, o criminoso insere um script de Ransomware para sequestrar todos os dados,
-					como aconteceu com a Renner. Para realizar esse tipo de ataque, o invasor pode explorar falhas
-					antigas do PHP ou outras linguagens de programação.
-				</p>
-				<mark>Como funciona?</mark>
-				<p>
-					O invasor aproveita das vulnerabilidades para inserir comandos maliciosos no banco de dados. Esses
-					comandos podem ser usados para obter informações sensíveis, como senhas e dados de cartão de
-					crédito, ou para modificar e excluir informações no banco de dados.
-				</p><br>
 			</section>
 		</div>
 

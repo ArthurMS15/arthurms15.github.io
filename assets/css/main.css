@@ -109,6 +109,10 @@ input, select, textarea {
 			transition: none !important;
 		}
 
+	.imagem-centralizada {
+		display: flex;
+		justify-content: center;
+	}
 /* Type */
 
 	body {
