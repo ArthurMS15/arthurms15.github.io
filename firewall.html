@@ -69,6 +69,7 @@
 				<p>
 					Antes de tomarmos como nota as regras de fato é importante ressaltar de que elas funcionam da seguinte forma em um contexto geral: as regras são organizadas por índices. Isso significa que o firewall verifica se uma solicitação atende à primeira regra, e assim por diante, analisando uma regra de cada vez. Se nenhuma das regras se aplicar à solicitação, o pacote é descartado. Para lidar com essas situações, é comum criar uma regra padrão, a última da lista, que descarta o pacote se for necessário.
 				</p>
+				<h1>Firewall da borda</h1>
 				<p>
 					Tendo todo esse contexto as regras estão todas ativas e são apresentadas da seguinte forma (todos os nomes tendem a ser auto explicativos sobre o que a regra realiza):
 				</p>
@@ -77,7 +78,6 @@
 				</div><br>
 				
 				<p>
-					LMEBRAR DOS PROTOCOLOS SENDO TCP OU UDP<br>
 					<mark>AnyIPtoWeb80</mark>: Qualquer IP da rede externa de qualquer porta pode ter acesso ao servidor web no protocolo HTTP (porta: 80)<br>
 					<strong>Motivo</strong>: permitir que usuários da internet acessem livremente o conteúdo disponibilizado no servidor web da sua organização. Isso é particularmente importante para sites públicos, onde a intenção é que qualquer pessoa, independente de sua localização ou IP, possa acessar as informações e recursos disponíveis no servidor web.<br>
 					<div class="imagem-centralizada">
@@ -107,75 +107,74 @@
 					<div class="imagem-centralizada">
 						<img src="images/regra5.png" alt="Descrição da imagem">
 					</div><br>
-					<mark>Regras que começam com "Out"</mark>: elas são respectivas a cada uma das outras regras citadas anteriormente, isso significa justamente que estão diretamente atreladas com elas, e o sentido pra estarem ligadas entre si é pelo fato de que essas outras regras lidam com que a saída ("Out") de servidores ocorrão unicamente pelas portas dos serviços chamados.<br>
+					<mark>Regras que começam com "Out"</mark>: elas são respectivas a cada uma das outras regras citadas anteriormente, isso significa justamente que estão diretamente atreladas com elas, e o sentido pra estarem ligadas entre si é pelo fato de que essas outras regras lidam com que a saída ("Out") de servidores ocorram unicamente pelas portas dos serviços chamados.<br>
 					<div class="imagem-centralizada">
 						<img src="images/regra6.png" alt="Descrição da imagem">
 					</div><br>
-				</p>
+					<p>Essa regra em específica lida apenas com o protocolo HTTP da web, entretanto por exemplo se fosse o DNS no "Source IP", então a porta e o IP seriam diferentes, essa imagem já demonstra a estrutura geral das outros serviços baseados também nas informações dadas das imagens anteriores.</p>
+					<p><strong>Motivo</strong>: Essas regras estão atreladas às regras de entrada mencionadas anteriormente, e o propósito de conectá-las é manter a consistência e a segurança na comunicação entre os servidores internos e os dispositivos externos.<br>
 
-				<br>
-				<ul class="statistics">
-					<li class="style1">
-						<strong>O que faz?</strong>
-					</li>
-					<li class="style2">
-						<strong>Operacionalização</strong>
-					</li>
-					<li class="style3">
-						<strong>Como funciona?</strong>
-					</li>
-				</ul>
-				<h2><strong>Malware:</strong></h2>
-				<mark> Quais recursos/ativos ele pode, potencialmente, afetar especificamente?</mark>
-				<p>
-					Afeta quase todos os aspectos de um sistema de computador: dados, hardware (dispositivos periféricos junto nisso), software (aplicativos instalados no sistema apresentando mau funcionamento) e a própria
-					rede em que ele está conectado:<br>
-					Roubando senhas, números de cartões de crédito, informações bancárias e outros dados
-					confidenciais.<br>
+					Ao criar regras "Out" para cada serviço específico (como HTTP, HTTPS, DNS, e-mail e VoIP), há a garantia que os servidores internos só possam enviar informações e se comunicar com dispositivos externos através das portas apropriadas para esses serviços. Isso ajuda a manter a organização das conexões e evita que servidores enviem dados através de portas não autorizadas ou desconhecidas.</p>
 				</p>
-				<mark>O que faz?</mark>
-				<p>Termo que se refere a <mark>todo o tipo de software malicioso</mark> (vírus, cavalos de Troia, worms
-					e ransomware), sendo assim podem ocasionar diversas coisas diferentes como danificar sistemas,
-					controlar remotamente, robar dados pessoais. A operação de um malware varia dependendo do tipo dele
-					e objetivo do atacante. Quando o usuário executa o programa infectado, o malware pode se instalar no
-					sistema.<br>
-					Como já mencionado, por ser um termo que abrange muitos softwares maliciosos, e sabendo que os
-					mesmos variam dependendo da intenção do atacante, aqui estão algumas de outras nomenclaturas
-					conhecidas para estes softwares maliciosos:<br>
-					Vírus: replicam e infectam-se em outros arquivos no computador; <br>
-					Worms: replicam e se espalham por uma rede; <br>
-					Trojans: se disfarçam como um software legítimo e enganam usuários para que os instalem; <br>
-					Spyware: rastreiam as atividades do usuário e coletam informações pessoais; <br>
-					Ransomware: criptografa os arquivos do usuário e exige um resgate em troca da chave de
-					descriptografia.</p>
-				<mark>Operacionalização</mark>
+				<h1>Firewall Interno</h1>
 				<p>
-					Por variar de acordo com o tipo específico de ameaça, essas etapas podem incluir a
-					<mark>infecção</mark> do sistema alvo, que ocorre quando o malware é introduzido por meio de uma
-					vulnerabilidade, como um email de phishing, download malicioso ou conexão de rede não segura. Para
-					evitar ser detectado, o malware pode se disfarçar como um arquivo legítimo. Em seguida, o malware é
-					instalado no sistema, permitindo que execute ações maliciosas, como a criação de arquivos ou pastas,
-					a alteração de arquivos existentes ou a modificação de configurações do sistema. <br> O malware pode
-					tentar se <mark>comunicar</mark> com um servidor remoto para receber instruções ou enviar dados
-					coletados do sistema infectado (alguns tipos de malwares são projetados para se espalhar para outros
-					sistemas na mesma rede ou na internet).
+					<mark>AnyPorttoWeb80</mark>: assegura que, quando a fonte provém da rede interna, as solicitações direcionadas ao endereço IP do servidor web possam ser executadas adequadamente por meio das portas designadas ao protocolo HTTP (porta: 80)<br>
+					<strong>Motivo</strong>: garante que apenas as comunicações autorizadas ocorram entre a rede interna e o servidor web, protegendo assim a infraestrutura de TI da sua organização contra acessos não autorizados e possíveis ameaças.<br>
+					<div class="imagem-centralizada">
+						<img src="images/2regra1.png" alt="Descrição da imagem">
+					</div><br>
+					<mark>AnyPorttoWeb443</mark>: assegura que, quando a fonte provém da rede interna, as solicitações direcionadas ao endereço IP do servidor web possam ser executadas adequadamente por meio das portas designadas ao protocolo HTTPS (porta: 443)<br>
+					<strong>Motivo</strong>: arante que apenas as comunicações autorizadas ocorram entre a rede interna e o servidor web, protegendo assim a infraestrutura de TI da sua organização contra acessos não autorizados e possíveis ameaças.<br>
+					<div class="imagem-centralizada">
+						<img src="images/2regra2.png" alt="Descrição da imagem">
+					</div><br>
+					<mark>AnyPorttoDatabase3306</mark>: qualquer porta de origem na rede interna de computadores se comunique com o servidor de banco de dados na porta 3306, que é a porta padrão para o MySQL e também comum para outros sistemas de gerenciamento de banco de dados (porta 3306).<br>
+					<strong>Motivo</strong>: permitir que as aplicações e serviços que dependem do acesso ao banco de dados possam se conectar e interagir com ele de forma eficiente. 
+					<div class="imagem-centralizada">
+						<img src="images/2regra3.png" alt="Descrição da imagem">
+					</div><br>
+
+					<mark>AnyPorttoSMTP25</mark>: qualquer porta de origem na rede interna de computadores se comunique com o servidor de email (porta 25).<br>
+					<strong>Motivo</strong>: permitir que as aplicações e serviços que dependem do envio e recebimento de emails possam se conectar e interagir com o servidor de email. Ao estabelecer a regra, há a garantia que apenas as comunicações autorizadas ocorram entre a rede interna e o servidor de email, protegendo assim a infraestrutura de TI da sua organização contra acessos não autorizados e possíveis ameaças.<br>
+					<div class="imagem-centralizada">
+						<img src="images/2regra4.png" alt="Descrição da imagem">
+					</div><br>
+
+					<mark>AnyPorttoVoIP8287</mark>: permite que qualquer porta de origem na rede interna de computadores se comunique com o servidor de VoIP (porta 8287).<br>
+					<strong>Motivo</strong>: garante que apenas as comunicações autorizadas ocorram entre a rede interna e o servidor de VoIP, protegendo assim a infraestrutura de TI da sua organização contra acessos não autorizados e possíveis ameaças, além de facilitar a comunicação por voz através da Internet entre os dispositivos da rede interna e o servidor de VoIP.<br>
+					<div class="imagem-centralizada">
+						<img src="images/2regra5.png" alt="Descrição da imagem">
+					</div><br>
+
+					<mark>AnyPorttoDns53</mark>: permite que qualquer porta de origem na rede interna de computadores se comunique com o servidor DNS (porta 53).<br>
+					<strong>Motivo</strong>: garante que os dispositivos em sua rede interna possam acessar o servidor DNS na porta 53 e obter resoluções de nomes de domínio necessárias para acessar serviços e recursos online. Isso também ajuda a proteger a infraestrutura de TI da sua organização, garantindo que apenas as comunicações autorizadas ocorram entre a rede interna e o servidor DNS.<br>
+					<div class="imagem-centralizada">
+						<img src="images/2regra6.png" alt="Descrição da imagem">
+					</div><br>
+
+					<mark>AnyPorttoChat5222</mark>: permite que qualquer porta de origem na rede interna de computadores se comunique com o servidor de chat (porta 5222).<br>
+					<strong>Motivo</strong>: criar uma regra como essa é garantir que os dispositivos na rede interna possam se conectar e utilizar um serviço de chat, como o XMPP (Extensible Messaging and Presence Protocol), além da garantia que os dispositivos em sua rede interna possam acessar o servidor de chat na porta 5222 e se comunicar com outros usuários, tanto dentro quanto fora da rede interna, por meio de mensagens instantâneas, compartilhamento de arquivos e outras funcionalidades de comunicação em tempo real.<br>
+					<div class="imagem-centralizada">
+						<img src="images/2regra7.png" alt="Descrição da imagem">
+					</div><br>
+
+					<mark>Regras que começam com "Out"</mark>: elas são respectivas a cada uma das outras regras citadas anteriormente, isso significa justamente que estão diretamente atreladas com elas, e o sentido pra estarem ligadas entre si é pelo fato de que essas outras regras lidam com que a saída ("Out") de servidores ocorram unicamente pelas portas dos serviços chamados.<br>
+					<div class="imagem-centralizada">
+						<img src="images/2regra8.png" alt="Descrição da imagem">
+					</div><br>
+					<p>Essa regra em específica lida apenas com o protocolo HTTP da web, entretanto por exemplo se fosse o DNS no "Destination IP", então a porta e o IP seriam diferentes, essa imagem já demonstra a estrutura geral das outros serviços baseados também nas informações dadas das imagens anteriores.</p>
+					<p><strong>Motivo</strong>: Essas regras estão atreladas às regras de entrada mencionadas anteriormente, e o propósito de conectá-las é manter a consistência e a segurança na comunicação entre os servidores internos e os dispositivos externos.<br>
+
+					As regras "Out" são criadas para manter um controle estrito sobre o tráfego de saída dos servidores, minimizando a exposição à ameaças e vulnerabilidades.</p>
 				</p>
-				<mark>Como funciona?</mark><br>
-				Cada malware tem suas <mark>próprias características e métodos de propagação</mark>.
-				O funcionamento deles variam de acordo com o seu tipo e objetivo, mas, em geral, eles têm a capacidade
-				de se instalar em um sistema com anexos de e-mails, sites falsos, programas não licenciados e outros, a
-				partir do momento que ele se intalou, ele tenta se esconder de detecções.</p>
-				<br>
+				
 			</section>
 		</div>
 
 		<!-- Footer -->
 		<footer id="footer">
 			<section>
-				<h2>Referências</h2>
-				<a href="https://www.aura.com/learn/types-of-cyber-attacks">AURA. 17 Types of Cyber Attacks Commonly
-					Used By Hackers. Disponível em: https://www.aura.com/learn/types-of-cyber-attacks. Acesso em: 17
-					fev. 2023.</a>
+
 			</section>
 		</footer>
 
