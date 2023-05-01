@@ -7,7 +7,7 @@
 <html>
 
 <head>
-	<title>Ataques Cibernéticos</title>
+	<title>Firewall</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
@@ -25,8 +25,7 @@
 		<!-- Header -->
 		<header id="header">
 			<h1>Descrição da rede, ditando a criação de regras de firewall e aprofundando as mesmas.</h1>
-			<p>Data: 05/04/2023</p>
-			<p>Trabalho feito com auxílio do grupo:</p>
+			<p>Data: 01/05/2023</p>
 			<ul class="actions">
 				<li><a href="index.html" class="button">Voltar</a></li>
 			</ul>
@@ -45,8 +44,11 @@
 				<br>
 				<p>A primeira etapa é determinar como será a configuração da sua rede, é possível escolher com <mark>nenhum firewall, firewall de perímetro ou sub-redes separadas</mark>.</p><br>
 				<p>
-					Antes de dar continuidade na conceitualização da diferenciação do que é cada uma dessa redes, é interessante entender com uma conceitualização básica, o que é exatamente um <mark>firewall</mark>:<br>
-					Ele é um <mark>dispositivo/software de segurança que monitora e controla o tráfego de rede</mark>, agindo como uma barreira entre redes confiáveis (internas) e não confiáveis (como a Internet). O principal <mark>objetivo dele é proteger os sistemas e os dados dentro da rede interna de ameaças externas</mark> e garantir que apenas tráfego autorizado e seguro possa passar entre as redes.<br>
+					Antes de dar continuidade na conceitualização da diferenciação do que é cada uma dessa redes, é interessante entender com uma conceitualização básica, o que é exatamente um <mark>firewall</mark> e o que é uma <mark>zona desmilitarizada</mark>:<br>
+					<p>
+						<mark>DMZ (Zona Desmilitarizada)</mark>: sub-rede posicionada entre uma rede confiável (rede interna da organização) e uma rede não confiável (a Internet). Essa configuração cria um isolamento físico entre as duas redes, com regras de conectividade estabelecidas e mantidas pelo firewall. Esse isolamento físico garante que apenas servidores localizados na DMZ sejam acessíveis pela Internet, evitando o acesso direto à rede interna da organização.
+					</p>
+					<mark>Firewall</mark>: é um <mark>dispositivo/software de segurança que monitora e controla o tráfego de rede</mark>, agindo como uma barreira entre redes confiáveis (internas) e não confiáveis (como a Internet). O principal <mark>objetivo dele é proteger os sistemas e os dados dentro da rede interna de ameaças externas</mark> e garantir que apenas tráfego autorizado e seguro possa passar entre as redes.<br>
 					O firewall <mark>funciona com base em regras e políticas predefinidas que determinam quais tipos de tráfego de rede são permitidos ou bloqueados</mark>. E as regras são configuradas com base em critérios como: endereços IP, portas, protocolos ou aplicativos específicos.
 				</p><br>
 				<p>Voltando para a configuração da rede no programa a diferenciação entre cada uma das configurações é listada à seguir:</p>
@@ -56,8 +58,43 @@
 					<mark>Sub-redes separadas</mark>: A rede interna é dividida em várias sub-redes isoladas, cada uma com seu próprio firewall. Isso permite uma segmentação mais granular da rede e oferece maior controle e segurança. <mark>Além de proteger a rede interna de ameaças externas, os firewalls também podem ser configurados para proteger sub-redes específicas de ameaças internas</mark>, como um dispositivo comprometido em outra sub-rede.
 				</p>
 				<p>
-					Então, para que sempre tenhamos a segurança mais detalhada possível, é escolhido para a configuração as sub-redes separadas.
+					Então, para que sempre tenhamos a segurança mais detalhada possível, é escolhido para a configuração as sub-redes separadas, representadas da seguinte forma:
 				</p>
+				<div class="imagem-centralizada">
+					<img src="images/subredesformadas.png" alt="Descrição da imagem">
+				</div><br>
+				<p>
+					O primeiro firewall é considerado o da borda da rede, e o segundo é o interno nessa representação.
+				</p>
+				<p>
+					Antes de tomarmos como nota as regras de fato é importante ressaltar de que elas funcionam da seguinte forma em um contexto geral: as regras são organizadas por índices. Isso significa que o firewall verifica se uma solicitação atende à primeira regra, e assim por diante, analisando uma regra de cada vez. Se nenhuma das regras se aplicar à solicitação, o pacote é descartado. Para lidar com essas situações, é comum criar uma regra padrão, a última da lista, que descarta o pacote se for necessário.
+				</p>
+				<p>
+					Tendo todo esse contexto as regras estão todas ativas e são apresentadas da seguinte forma (todos os nomes tendem a ser auto explicativos sobre o que a regra realiza):
+				</p>
+				<div class="imagem-centralizada">
+					<img src="images/activerulesfirewall.png" alt="Descrição da imagem">
+				</div><br>
+				
+				<p>
+					LMEBRAR DOS PROTOCOLOS SENDO TCP OU UDP<br>
+					<mark>AnyIPtoWeb80</mark>: Qualquer IP da rede externa de qualquer porta pode ter acesso ao servidor web no protocolo HTTP (porta: 80)<br>
+					<strong>Motivo</strong>: permitir que usuários da internet acessem livremente o conteúdo disponibilizado no servidor web da sua organização. Isso é particularmente importante para sites públicos, onde a intenção é que qualquer pessoa, independente de sua localização ou IP, possa acessar as informações e recursos disponíveis no servidor web.<br>
+					<mark>AnyIPtoWeb443</mark>: Qualquer IP da rede externa de qualquer porta pode ter acesso ao servidor web no protocolo HTTPS (porta: 443)<br>
+					<strong>Motivo</strong>: oferecer uma conexão segura e criptografada aos usuários da internet que acessam o conteúdo disponibilizado no servidor web da sua organização.<br>
+					Observação: o protocolo HTTPS é uma versão segura do HTTP e utiliza criptografia SSL/TLS para proteger a transmissão de dados entre o navegador do usuário e o servidor web.<br>
+					<mark>AnyIPtoDns53</mark>: Qualquer IP da rede externa de qualquer porta pode ter acesso ao servidor DNS (porta: 53)<br>
+					<strong>Motivo</strong>: necessidade de permitir que os usuários da internet resolvam os nomes de domínio associados aos serviços e recursos oferecidos pela sua organização.<br>
+					Observação: DNS é fundamental para o funcionamento da internet, pois converte nomes de domínio legíveis por humanos (como www.example.com) em endereços IP numéricos que os computadores e dispositivos podem entender. A porta 53 é a porta padrão usada para consultas e respostas do protocolo DNS, tanto em UDP quanto em TCP. Permitir o acesso à porta 53 do servidor DNS é crucial para garantir que os usuários possam localizar e se conectar aos recursos da sua organização na internet.<br>
+					<mark>AnyIPtoMail25</mark>: Qualquer outro servidor de email da rede pode ter acesso para se comunicar servidor de email da entidade (porta: 25)<br>
+					<stronger>Motivo</stronger>: necessidade de garantir que os e-mails possam ser enviados e recebidos entre os servidores de e-mail dentro e fora da sua organização.
+					Observação: a porta 25 é a porta padrão usada pelo protocolo Simple Mail Transfer Protocol (SMTP) para transmitir e-mails entre servidores de e-mail. Permitir o acesso à porta 25 é crucial para garantir a comunicação entre os servidores de e-mail e, consequentemente, a entrega de e-mails aos destinatários corretos.<br>
+					<mark>AnyIPtoVoip8287</mark>: Qualquer IP da rede externa de qualquer porta pode ter acesso a comunicação VoIP (porta: 8287)<br>
+					<strong>Motivo</strong>: garantir que os usuários externos possam estabelecer chamadas de voz e vídeo com os usuários dentro da sua organização, bem como entre eles, usando o serviço VoIP.
+					Observação: VoIP (Voice over Internet Protocol) é uma tecnologia que permite a transmissão de chamadas de voz e vídeo pela internet, em vez de usar linhas telefônicas convencionais. Permitir o acesso à porta 8287 é fundamental para garantir a comunicação eficiente entre os usuários externos e internos que utilizam o serviço VoIP.<br>
+					<mark>Regras que começam com "Out"</mark>: elas são respectivas a cada uma das outras regras citadas anteriormente, isso significa justamente que estão diretamente atreladas com elas, e o sentido pra estarem ligadas entre si é pelo fato de que essas outras regras lidam com que a saída ("Out") de servidores ocorrão unicamente pelas portas dos serviços chamados.
+				</p>
+
 				<br>
 				<ul class="statistics">
 					<li class="style1">
