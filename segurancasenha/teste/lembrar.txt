@@ -1,0 +1,3 @@
+se eu quiser q ele tenha a validação de uma senha forte, teste pelo terminals
+
+na pagina registro ele registra o novo usuário (perimitindo senhas mais fáceis para que eu consiga lembrar) e na login é autoexplicativo
