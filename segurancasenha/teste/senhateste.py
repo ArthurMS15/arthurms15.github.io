@@ -62,7 +62,7 @@ def enviar_email_alerta(email, ip, tentativa_acesso=True):
         msg.set_content(f"Seu acesso foi realizado com sucesso\nIP: {ip}")
         msg["Subject"] = "Acesso bem-sucedido"
 
-    msg["From"] = "seu_email@example.com"  # Insira seu e-mail aqui
+    msg["From"] = "seu_email@example.com"
     msg["To"] = email
 
     try:
@@ -91,6 +91,7 @@ def gerar_chave(password, salt):
         algorithm=hashes.SHA256(),
         length=32,
         salt=salt,
+        otherinfo=b"Additional Info",
         backend=backend
     )
     final_key = kdf_concat.derive(intermediate_key)
