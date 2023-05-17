@@ -1,22 +1,20 @@
 import re
-import os
-import base64
+import os #ler e escrever arquivos
+import base64 #dados binários para uma forma que pode ser impressa ou transmitida de forma segura
 import sqlite3
-import smtplib
 import socket
+
 from email.message import EmailMessage
-from getpass import getpass
+from getpass import getpass #ocultar a entrada do usuário
 from cryptography.fernet import Fernet
 from cryptography.hazmat.primitives import hashes
-from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
-from cryptography.hazmat.primitives.kdf.concatkdf import ConcatKDFHMAC
+from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC #função de derivação de chave, código de autenticação de mensagem que usa uma função hash criptográfica em combinação com uma chave secreta.
+from cryptography.hazmat.primitives.kdf.concatkdf import ConcatKDFHMAC #outra função de derivação de chave que combina os dados de entrada 
 from cryptography.hazmat.backends import default_backend
-from google.oauth2.credentials import Credentials
+
+#autorização do OAuth 2.0 e interação com API google
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
-from googleapiclient.errors import HttpError
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
 import pickle
 from google.auth.transport.requests import Request
 
@@ -93,7 +91,6 @@ def gerar_chave(password, salt):
         algorithm=hashes.SHA256(),
         length=32,
         salt=salt,
-        otherinfo=b"Additional Info", # Aqui você pode incluir informações adicionais, se necessário
         backend=backend
     )
     final_key = kdf_concat.derive(intermediate_key)
